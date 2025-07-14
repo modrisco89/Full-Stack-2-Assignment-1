@@ -52,3 +52,9 @@ export interface MoviePageProps {
 }
 
 export type FilterOption = "title" | "genre";
+
+  export interface Review{
+    id: string;
+    content: string
+    author: string
+  }
