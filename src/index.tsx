@@ -1,4 +1,5 @@
 import React from "react";
+import AddMovieReviewPage from './pages/addMovieReviewPage';
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
@@ -30,6 +31,7 @@ const App = () => {
         <SiteHeader />      {/* New Header  */}
         <MoviesContextProvider>
         <Routes>
+          <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
           <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/" element={<HomePage />} />
