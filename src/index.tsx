@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
+import MustWatchMoviesPage from "./pages/mustWatchMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/reviews/:id" element={<MovieReviewPage/>} />
           <Route path="/movies/upcoming" element={<UpcomingMoviesPage/>} />
+          <Route path="/movies/mustwatch" element={<MustWatchMoviesPage />} />
         </Routes>
         </MoviesContextProvider>
       </BrowserRouter>

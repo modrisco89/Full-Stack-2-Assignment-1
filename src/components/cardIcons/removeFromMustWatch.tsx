@@ -4,12 +4,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { MoviesContext } from "../../contexts/moviesContext";
 import {BaseMovieProps} from "../../types/interfaces";
 
-const RemoveFromFavouritesIcon: React.FC<BaseMovieProps> = (movie) => {
+const RemoveFromMustWatchIcon: React.FC<BaseMovieProps> = (movie) => {
   const context = useContext(MoviesContext);
 
   const onUserRequest = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    context.removeFromFavourites(movie);
+    context.removeFromMustWatch(movie);
   };
 
 return (
@@ -22,4 +22,4 @@ return (
 );
 };
 
-export default RemoveFromFavouritesIcon;
+export default RemoveFromMustWatchIcon;
