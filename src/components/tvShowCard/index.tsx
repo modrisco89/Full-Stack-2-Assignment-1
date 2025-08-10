@@ -27,11 +27,11 @@ const styles = {
 };
 interface TvShowCardProps {
   tvShow: BaseTvShowProps;
-  action: (m: BaseTvShowProps) => React.ReactNode;
+  action: (t: BaseTvShowProps) => React.ReactNode;
 }
 
 const TvShowCard: React.FC<TvShowCardProps> = ({tvShow, action}) => {
-  const { favouritesTv, addToFavourites, removeFromFavourites } = useContext(TvShowsContext);//NEW
+  const { favouritesTv, addToFavouritesTv } = useContext(TvShowsContext);//NEW
 
 const isFavourite = favouritesTv.find((id) => id === tvShow.id)? true : false;//NEW
  
@@ -79,7 +79,7 @@ const isFavourite = favouritesTv.find((id) => id === tvShow.id)? true : false;//
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-  {action(tvShow)}
+     {action(tvShow)}
 
         <Link to={`/tv/${tvShow.id}`}>
         <Button variant="outlined" size="medium" color="primary">

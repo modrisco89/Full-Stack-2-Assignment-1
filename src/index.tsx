@@ -17,6 +17,7 @@ import MyTvShowsPage from "./pages/myTvShowsPage";
 import TvShowPage from "./pages/tvShowDetailsPage";
 import TvReviewPage from "./pages/tvShowReviewPage";
 import AddTvReviewPage from './pages/addTvShowReviewPage';
+import TvShowsContextProvider from "./contexts/tvShowsContext";
 
 
 const queryClient = new QueryClient({
@@ -35,6 +36,7 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />      {/* New Header  */}
         <MoviesContextProvider>
+        <TvShowsContextProvider>
         <Routes>
           <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
           <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
@@ -50,6 +52,7 @@ const App = () => {
           <Route path="/reviewstv/:id" element={<TvReviewPage/>} />
           <Route path="/reviewstv/form" element={<AddTvReviewPage/>} />
         </Routes>
+        </TvShowsContextProvider>
         </MoviesContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />

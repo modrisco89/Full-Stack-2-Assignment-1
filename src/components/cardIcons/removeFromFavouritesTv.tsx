@@ -9,7 +9,7 @@ const RemoveFromFavouritesIcon: React.FC<BaseTvShowProps> = (tvShow) => {
 
   const onUserRequest = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    context.removeFromFavourites(tvShow);
+    context.removeFromFavouritesTv(tvShow);
   };
 
 return (

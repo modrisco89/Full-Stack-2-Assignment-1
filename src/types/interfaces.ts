@@ -69,7 +69,7 @@ export interface BaseTvShowProps {
     number_of_seasons: number;
     number_of_episodes: number;
     vote_count: number;
-    favouritesTv?: boolean;
+    favouriteTv?: boolean;
     genre_ids?: number[];
   }
   export interface TvShowListPageTemplateProps extends BaseTvShowListProps {
@@ -77,7 +77,7 @@ export interface BaseTvShowProps {
 }
 export interface BaseTvShowListProps {
   tvShows: BaseTvShowProps[];
-  action: (m: BaseTvShowProps) => React.ReactNode;
+  action: (t: BaseTvShowProps) => React.ReactNode;
 }
 
 

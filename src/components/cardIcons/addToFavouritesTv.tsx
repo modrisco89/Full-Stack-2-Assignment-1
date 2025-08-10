@@ -4,18 +4,18 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import {BaseTvShowProps} from "../../types/interfaces"
 
-const AddToFavouritesIcon: React.FC<BaseTvShowProps> = (tvShow) => {
+const AddToFavouritesIconTv: React.FC<BaseTvShowProps> = (tvShow) => {
   const context = useContext(TvShowsContext);
 
   const onUserSelect = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    context.addToFavourites(tvShow);
+    context.addToFavouritesTv(tvShow);
   };
   return (
-    <IconButton aria-label="add to favorites" onClick={onUserSelect}>
+    <IconButton aria-label="add to favorites Tv" onClick={onUserSelect}>
       <FavoriteIcon color="primary" fontSize="large" />
     </IconButton>
   );
 };
 
-export default AddToFavouritesIcon;
+export default AddToFavouritesIconTv;

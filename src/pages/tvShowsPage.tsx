@@ -9,7 +9,7 @@ import TvShowFilterUI, {
 import { BaseTvShowProps, DiscoverTvShows } from "../types/interfaces";
 import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
-import AddToFavouritesIcon from '../components/cardIcons/addToFavouritesTv'
+import AddToFavouritesIconTv from '../components/cardIcons/addToFavouritesTv'
 
 
 const titleFiltering = {
@@ -23,8 +23,10 @@ const genreFiltering = {
   condition: genreFilter,
 };
 
-const HomePage: React.FC = () => {
-  const { data, error, isLoading, isError } = useQuery<DiscoverTvShows, Error>("discover", getTvShows);
+const tvHomePage: React.FC = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { data, error, isLoading, isError } = useQuery<DiscoverTvShows, Error>("tv", getTvShows);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { filterValues, setFilterValues, filterFunction } = useFiltering(
     [titleFiltering, genreFiltering]
   );
@@ -58,7 +60,7 @@ const HomePage: React.FC = () => {
         title="Discover TV Shows"
         tvShows={displayedTvShows}
         action={(tvShow: BaseTvShowProps) => {
-          return <AddToFavouritesIcon {...tvShow} />
+          return <AddToFavouritesIconTv {...tvShow} />
         }}
       />
       <TvShowFilterUI
@@ -69,4 +71,4 @@ const HomePage: React.FC = () => {
     </>
   );
 };
-export default HomePage;
+export default tvHomePage;
