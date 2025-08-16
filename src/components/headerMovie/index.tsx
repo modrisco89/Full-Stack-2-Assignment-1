@@ -10,6 +10,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Avatar from "@mui/material/Avatar";
 
 
+
+
 const styles = {
     root: {  
     display: "flex",
@@ -27,12 +29,16 @@ const styles = {
 const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
   const movies = JSON.parse(localStorage.getItem("favourites") || '[]');
   const movieFoundById = movies.find((moviefound: { id: number; }) => moviefound.id === movie.id);
+
+
   return (
     
     <Paper component="div" sx={styles.root}>
-      <IconButton aria-label="go back">
+
+      <IconButton aria-label="go back" >
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
+
 
         {         
           movieFoundById?.favourite ? (
@@ -53,6 +59,7 @@ const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
       <IconButton aria-label="go forward">
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
+
     </Paper>
   );
 };
